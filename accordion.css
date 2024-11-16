@@ -1,0 +1,91 @@
+/* fix: added General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* fix: Accordion Button Styles */
+button.accordion {
+  width: 100%;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+  position: relative;
+}
+
+button.accordion:after {
+  font-family: FontAwesome;
+  content: "\f150"; /* fix: Plus icon */
+  font-size: 18px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  transition: transform 0.2s linear;
+}
+
+button.accordion.is-open:after {
+  content: "\f151"; /* fix: Minus icon */
+  transform: translateY(-50%) rotate(180deg);
+}
+
+button.accordion:hover,
+button.accordion.is-open {
+  background-color: #ddd;
+}
+
+/* fix: Keyboard Focus Styles */
+button.accordion:focus {
+  outline: 3px solid #0078d4;
+  outline-offset: 2px;
+}
+
+/* Fix: added Accordion Content Styles */
+.accordion-content {
+  background-color: white;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+
+.accordion-content p {
+  margin: 15px 0;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #555;
+}
+
+/* fix: Accordion Border Styles */
+.accordion-content:first-of-type {
+  border-top: 1px solid #ddd;
+}
+
+.accordion-content:last-of-type {
+  border-bottom: 1px solid #ddd;
+}
